@@ -6,6 +6,11 @@
 </head>
 <body>
     <h1>Thymeleaf課題</h1>
+<div th:if="${#strings.isEmpty(val)}">
+    <p th:text="'何か入力をして送信をしてください'"></p>
+</div>
+<div th:unless="${#strings.isEmpty(val)}">
     <p th:text="'入力された値は「' + ${val} + '」です。'"></p>
+</div>
 </body>
 </html>
