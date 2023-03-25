@@ -5,14 +5,14 @@
     <title>Kadai of Thymeleaf</title>
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
+    <h1 th:text="#{content.title}"></h1>
 <div th:if="${#strings.isEmpty(val)}">
-    <p th:text="'何か入力をして送信をしてください'"></p>
-    <p><a th:href="@{/input}">入力画面へ戻る</a></p>
+    <p th:text="#{output.content.message1}"></p>
+    <p><a th:text="#{output.content.message2}" th:href="@{/input}"> </a></p>
 </div>
 <div th:unless="${#strings.isEmpty(val)}">
-    <p th:text="'入力された値は「' + ${val} + '」です。'"></p>
-    <p><a th:href="@{/input/(previous=${param.val[0]})}">入力画面へ戻る</a></p>
+    <p th:text="#{output.content.message3} + ${val} + #{output.content.message4}"></p>
+    <p><a th:text=#{output.content.message2} th:href="@{/input/(previous=${param.val[0]})}"></a></p>
 </div>
 </body>
 </html>

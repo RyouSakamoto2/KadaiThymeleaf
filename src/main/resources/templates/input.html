@@ -5,15 +5,15 @@
     <title>Kadai of Thymeleaf</title>
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
-    <h2>入力画面</h2>
-    <p>値を入力してください。</p>
+    <h1 th:text="#{content.title}"></h1>
+    <h2 th:text="#{input.content.inputMessage1}"></h2>
+    <p th:text="#{input.content.inputMessage2}"></p>
 <div th:unless="${#strings.isEmpty(param.previous)}">
-    <p th:text="'前回入力された値は「' + ${param.previous[0]} + '」です。'"></p>
+    <p th:text="#{input.content.message1} + ${param.previous[0]} + #{input.content.message2}"></p>
 </div>
     <form method="post" action="/output">
         <input type="text" name="val">
-        <button type="submit">送信</button>
+        <button th:text="#{input.content.transmission}" type="submit"> </button>
     </form>
 </body>
 </html>
