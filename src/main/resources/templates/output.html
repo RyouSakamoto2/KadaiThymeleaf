@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1 th:text="#{content.title}"></h1>
+    <h2 th:text="#{input.content.inputMessage1}"></h2>
 <div th:if="${#strings.isEmpty(val)}">
     <p th:text="#{output.content.message1}"></p>
     <p><a th:text="#{output.content.message2}" th:href="@{/input}"> </a></p>
